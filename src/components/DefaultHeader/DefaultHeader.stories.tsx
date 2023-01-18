@@ -37,5 +37,5 @@ export const Custom = Template.bind({});
 Custom.args = {
     label1: 'NickCo Industrial Janky Operating System',
     label2: 'Copyright 2023 Nick Pack',
-    label3: '-Potato 25-'
+    serverlabel: '-Potato 25-'
 };

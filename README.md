@@ -1,4 +1,4 @@
-![Image](./src/img/RobCo_logo.webp)
+![Image](./src/assets/img/RobCo_logo.webp)
 
 # RobCo Industries React Components
 

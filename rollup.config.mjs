@@ -5,6 +5,7 @@ import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import url from '@rollup/plugin-url';
 
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
@@ -29,6 +30,10 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
+      url({
+        include: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.eot', '**/fonts/*.svg'],
+        fileName: '[dirname][hash][extname]',
+      }),
       postcss(),
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),
