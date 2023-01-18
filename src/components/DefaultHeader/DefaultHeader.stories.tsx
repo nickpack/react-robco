@@ -21,21 +21,21 @@ SOFTWARE.
 */
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Screen from "./Screen";
-import DefaultHeader from "../DefaultHeader";
+import DefaultHeader from "./DefaultHeader";
 
 export default {
-  title: "ReactRobco/Screen",
-  component: Screen,
-} as ComponentMeta<typeof Screen>;
+  title: "ReactRobco/DefaultHeader",
+  component: DefaultHeader,
+} as ComponentMeta<typeof DefaultHeader>;
 
-const Template: ComponentStory<typeof Screen> = (args) => <Screen {...args} />;
+const Template: ComponentStory<typeof DefaultHeader> = (args) => <DefaultHeader {...args} />;
 
-export const FlickerAndScanLines = Template.bind({});
-FlickerAndScanLines.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
-export const WithHeader : ComponentStory<typeof Screen> = (args) =>(
-    <Screen {...args}>
-      <DefaultHeader />
-    </Screen>
-  );
+export const Custom = Template.bind({});
+Custom.args = {
+    label1: 'NickCo Industrial Janky Operating System',
+    label2: 'Copyright 2023 Nick Pack',
+    label3: '-Potato 25-'
+};

@@ -22,12 +22,13 @@ SOFTWARE.
 import React from "react";
 import { PropsWithChildren } from 'react'
 
+import BaseStyles from '../Base/Base.module.scss'
 import styles from './Screen.module.scss'
 
 export interface ScreenProps {}
 
 const Screen = (props: PropsWithChildren<ScreenProps>) => {
-  return <div className={styles.crt}>{props.children}</div>;
+  return <div className={[styles.crt, BaseStyles.robco].join(' ')}>{props.children}</div>;
 };
 
 export default Screen;

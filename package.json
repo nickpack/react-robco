@@ -9,7 +9,7 @@
   "author": "Nick Pack <nick@pack.me.uk>",
   "license": "MIT",
   "scripts": {
-    "rollup": "rollup -c",
+    "build": "rollup -c",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -62,5 +62,7 @@
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-type-animation": "^2.1.2"
+  }
 }

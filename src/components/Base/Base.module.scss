@@ -19,23 +19,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Screen from "./Screen";
-import DefaultHeader from "../DefaultHeader";
+@import url('../../fonts/fixedsys.scss');
 
-export default {
-  title: "ReactRobco/Screen",
-  component: Screen,
-} as ComponentMeta<typeof Screen>;
-
-const Template: ComponentStory<typeof Screen> = (args) => <Screen {...args} />;
-
-export const FlickerAndScanLines = Template.bind({});
-FlickerAndScanLines.args = {};
-
-export const WithHeader : ComponentStory<typeof Screen> = (args) =>(
-    <Screen {...args}>
-      <DefaultHeader />
-    </Screen>
-  );
+.robco {
+    font-family: 'fixedsys';
+}

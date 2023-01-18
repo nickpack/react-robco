@@ -21,21 +21,19 @@ SOFTWARE.
 */
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Screen from "./Screen";
-import DefaultHeader from "../DefaultHeader";
+import Heading from "./Heading";
 
 export default {
-  title: "ReactRobco/Screen",
-  component: Screen,
-} as ComponentMeta<typeof Screen>;
+  title: "ReactRobco/Heading",
+  component: Heading,
+} as ComponentMeta<typeof Heading>;
 
-const Template: ComponentStory<typeof Screen> = (args) => <Screen {...args} />;
-
-export const FlickerAndScanLines = Template.bind({});
-FlickerAndScanLines.args = {};
-
-export const WithHeader : ComponentStory<typeof Screen> = (args) =>(
-    <Screen {...args}>
-      <DefaultHeader />
-    </Screen>
+export const ExampleHeading1 : ComponentStory<typeof Heading> = (args) =>(
+    <Heading {...args}>
+      Welcome to the Museum of Technology<br/> #System Upgrades Courtesty of Prime
+    </Heading>
   );
+
+const args = {
+    variant: 'h1',
+}
