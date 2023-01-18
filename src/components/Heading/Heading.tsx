@@ -20,22 +20,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Screen from "./Screen";
-import DefaultHeader from "../DefaultHeader";
+import { PropsWithChildren } from 'react'
 
-export default {
-  title: "ReactRobco/Screen",
-  component: Screen,
-} as ComponentMeta<typeof Screen>;
+import BaseStyles from '../Base/Base.module.scss'
+import './Heading.module.scss'
 
-const Template: ComponentStory<typeof Screen> = (args) => <Screen {...args} />;
+export interface HeadingProps {
+  variant: string;
+  classes: string;
+}
 
-export const FlickerAndScanLines = Template.bind({});
-FlickerAndScanLines.args = {};
+const Heading = (props: PropsWithChildren<HeadingProps>) => {
+  switch (props.variant) {
+    case 'h1':
+      return (<h1 className={[BaseStyles.robco, props.classes].join(' ')}>{props.children}</h1>)
+    case 'h2':
+      return (<h2 className={[BaseStyles.robco, props.classes].join(' ')}>{props.children}</h2>)
+    case 'h3':
+      return (<h3 className={[BaseStyles.robco, props.classes].join(' ')}>{props.children}</h3>)
+    default:
+      return (<h1 className={[BaseStyles.robco, props.classes].join(' ')}>{props.children}</h1>)
+  }
+};
 
-export const WithHeader : ComponentStory<typeof Screen> = (args) =>(
-    <Screen {...args}>
-      <DefaultHeader />
-    </Screen>
-  );
+export default Heading;

@@ -19,23 +19,24 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Screen from "./Screen";
-import DefaultHeader from "../DefaultHeader";
+@import '../Base/variables';
 
-export default {
-  title: "ReactRobco/Screen",
-  component: Screen,
-} as ComponentMeta<typeof Screen>;
+.wrapper {
+    display:block;
+    clear: both;
+    padding: 1em;
+    line-height: 0.8;
+}
 
-const Template: ComponentStory<typeof Screen> = (args) => <Screen {...args} />;
+.headerline {
+    font-size: 2em;
+    color: $base_text_colour;
+    text-transform: uppercase;
+    text-align: center;
+}
 
-export const FlickerAndScanLines = Template.bind({});
-FlickerAndScanLines.args = {};
-
-export const WithHeader : ComponentStory<typeof Screen> = (args) =>(
-    <Screen {...args}>
-      <DefaultHeader />
-    </Screen>
-  );
+.serverline {
+    font-size: 2em;
+    color: $base_text_colour;
+    text-align: center;
+}
